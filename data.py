@@ -14,6 +14,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
+import joblib
 print('Libraries loaded.')
 
 # Load dataset
@@ -124,3 +125,9 @@ print('Confusion matrix: ')
 print(confusion_matrix(y_validation, predictions))
 print('Classification report: ')
 print(classification_report(y_validation, predictions))
+
+print('*******************************************************************************')
+
+
+#save the trained model
+joblib.dump(model, 'iris_model.pkl')
